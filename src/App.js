@@ -1,4 +1,6 @@
 import "./App.css";
+import { AiOutlineDelete } from "react-icons/ai";
+import { FaCheck } from "react-icons/fa";
 
 function App() {
   return (
@@ -14,7 +16,10 @@ function App() {
 
           <div className="todo-input-item">
             <label>Description</label>
-            <input type="text" placeholder="What's the description of your To Do?" />
+            <input
+              type="text"
+              placeholder="What's the description of your To Do?"
+            />
           </div>
 
           <div className="todo-input-item">
@@ -23,14 +28,20 @@ function App() {
             </button>
           </div>
         </div>
-        
+
         <div className="todo-list">
           <div className="todo-list-item">
-            <h3>Task 1</h3>
-            <p>Description</p>
+            <div>
+              <h3>Task 1</h3>
+              <p>Description</p>
+            </div>
+
+            <div>
+              <AiOutlineDelete className="icon" />
+              <FaCheck className="check-icon" />
+            </div>
           </div>
         </div>
-
       </div>
     </div>
   );
