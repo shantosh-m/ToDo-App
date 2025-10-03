@@ -7,6 +7,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
+  const [animating, setAnimating] = useState({}); // { id: "complete" | "delete" }
 
   const handleAdd = () => {
     if (!title || !desc) return; // prevent empty todos
@@ -20,8 +21,27 @@ function App() {
     setDesc("");
   };
 
+  const triggerAnimationAndRemove = (id, type) => {
+    // Mark this todo as animating
+    setAnimating((prev) => ({ ...prev, [id]: type }));
+
+    // Remove after animation duration
+    setTimeout(() => {
+      setTodos((prev) => prev.filter((todo) => todo.id !== id));
+      setAnimating((prev) => {
+        const newState = { ...prev };
+        delete newState[id];
+        return newState;
+      });
+    }, 600); // match CSS animation duration
+  };
+
   const handleDelete = (id) => {
-    setTodos(todos.filter((todo) => todo.id !== id));
+    triggerAnimationAndRemove(id, "delete");
+  };
+
+  const handleComplete = (id) => {
+    triggerAnimationAndRemove(id, "complete");
   };
 
   return (
@@ -59,7 +79,16 @@ function App() {
 
         <div className="todo-list">
           {todos.slice(0, 5).map((todo) => (
-            <div key={todo.id} className="todo-list-item">
+            <div
+              key={todo.id}
+              className={`todo-list-item ${
+                animating[todo.id] === "complete"
+                  ? "completed-animate"
+                  : animating[todo.id] === "delete"
+                  ? "delete-animate"
+                  : ""
+              }`}
+            >
               <div>
                 <h3>{todo.title}</h3>
                 <p>{todo.desc}</p>
@@ -72,7 +101,7 @@ function App() {
                 />
                 <FaCheck
                   className="check-icon"
-                  onClick={() => handleDelete(todo.id)}
+                  onClick={() => handleComplete(todo.id)}
                 />
               </div>
             </div>
