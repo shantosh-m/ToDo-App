@@ -2,6 +2,7 @@ body {
   background-color: #1f1e1e;
   color: white;
   overflow: hidden;
+  font-family: Arial, sans-serif;
 }
 
 h1 {
@@ -14,10 +15,9 @@ h1 {
   width: fit-content;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 3%;
-  max-height: 80vh;
-  overflow-y: auto;
+  max-height: 78vh;
   box-shadow: 0px 5px 7px rgb(27, 27, 27);
+  border-radius: 8px;
 }
 
 .todo-input {
@@ -45,6 +45,7 @@ h1 {
   padding: 8px;
   border: none;
   width: 250px;
+  border-radius: 4px;
 }
 
 .todo-input-item input:focus {
@@ -60,6 +61,7 @@ h1 {
   padding: 10px;
   width: 60px;
   cursor: pointer;
+  transition: background 0.3s;
 }
 
 .addBtn:hover {
@@ -81,6 +83,8 @@ h1 {
   padding-top: 10px;
   margin-bottom: 10px;
   box-shadow: 0px 3px 5px rgb(43, 42, 42);
+  max-height: 60px;
+  border-radius: 6px;
 }
 
 .todo-list-item h3 {
