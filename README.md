@@ -1,9 +1,12 @@
 # ToDo Take-home Assessment
 
-+-------------------+ +-------------------+ +-------------------+
-| React Frontend | <---> | Node.js Backend | <---> | PostgreSQL DB |
-| localhost:3000 | | localhost:4000 | | localhost:5432 |
-+-------------------+ +-------------------+ +-------------------+
+## 🏗️ System Architecture
+
+```mermaid
+graph LR
+A[React Frontend\nlocalhost:3000] <--> B[Node.js Backend\nlocalhost:4000]
+B <--> C[PostgreSQL DB\nlocalhost:5432]
+```
 
 ## Tech stack
 
