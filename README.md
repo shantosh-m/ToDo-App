@@ -32,6 +32,12 @@ B <--> C[MySQL DB localhost:5432]
 - /frontend
 - docker-compose.yml
 
+## Running tests
+
+- Backend unit/integration: `cd backend && npm test`
+- Frontend tests: `cd frontend && npm test`
+- Postman API testing done 
+
 ## Notes
 
 - Only most recent 5 incomplete tasks are shown.
