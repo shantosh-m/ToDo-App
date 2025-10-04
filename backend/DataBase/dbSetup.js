@@ -19,6 +19,7 @@ async function setup() {
   // Create table named "task" if not exists
   // pool is used for resuable connection
   // It has Performance, concurrency, and DB resource management.
+  // Hence we dont have to initalize db connection again & again.
   
   await pool.query(`
     CREATE TABLE IF NOT EXISTS task (

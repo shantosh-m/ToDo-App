@@ -42,4 +42,4 @@ B <--> C[MySQL DB localhost:5432]
 
 - Only most recent 5 incomplete tasks are shown.
 - Completed tasks animate and are removed from the UI.
-- And those records will be deleted entirely from the database
+- And those records will be deleted entirely from the database.

@@ -1,4 +1,3 @@
-// taskHandlers.test.js
 import { jest } from "@jest/globals";
 import {
   getTasks,

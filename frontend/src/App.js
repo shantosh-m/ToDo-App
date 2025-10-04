@@ -7,7 +7,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
-  const [animating, setAnimating] = useState({}); // { id: "complete" | "delete" }
+  const [animating, setAnimating] = useState({}); // { id: "complete" | "delete" } To make different animation
 
   // Function to fetch latest 5 tasks from backend
   const fetchTasks = async () => {
@@ -47,9 +47,9 @@ function App() {
 
       // Add the new todo to the top and keep only 5 tasks
       setTodos([newTodo, ...todos.slice(0, 4)]);
-
       setTitle("");
       setDesc("");
+
     } catch (err) {
       console.error(err);
       alert("Something went wrong while adding the task.");
@@ -60,7 +60,8 @@ function App() {
     // Mark this todo as animating
     setAnimating((prev) => ({ ...prev, [id]: type }));
 
-    // Remove after animation duration
+    // Remove it after animation duration
+    // match CSS animation duration by using 600ms
     setTimeout(() => {
       setTodos((prev) => prev.filter((todo) => todo.id !== id));
       setAnimating((prev) => {
@@ -68,7 +69,7 @@ function App() {
         delete newState[id];
         return newState;
       });
-    }, 600); // match CSS animation duration
+    }, 600); 
   };
 
   const handleDelete = async (id) => {

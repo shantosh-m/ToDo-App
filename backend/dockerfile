@@ -1,8 +1,9 @@
 FROM node:20-alpine   
 #lightweight Node image with npm
+
 WORKDIR /app
 
-# Copy only package files first (for caching)
+# Copy only package files 
 COPY package*.json ./
 
 # Install dependencies

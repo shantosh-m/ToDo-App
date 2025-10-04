@@ -11,7 +11,7 @@ async function initDB() {
     port: process.env.DB_PORT,
   });
 
-  // Create database if not exists
+  // Create database if not exists under named "todo_db"
   await connection.query(`CREATE DATABASE IF NOT EXISTS \`${process.env.DB_NAME}\``);
   console.log(`Database ${process.env.DB_NAME} is ready`);
 

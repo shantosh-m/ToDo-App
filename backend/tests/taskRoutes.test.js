@@ -8,7 +8,7 @@ let app;
 let createdTaskId;
 
 beforeAll(() => {
-  // Create a mock pool without affecting realDB
+  // Create a mock pool without affecting realDB act as mockDB
   mockPool = {
     query: jest.fn(),
   };
@@ -76,7 +76,7 @@ describe("Task Routes (Mocked DB)", () => {
     mockPool.query.mockResolvedValueOnce([{}]);
 
     const res = await request(app).delete(`/api/tasks/${createdTaskId}`);
-    expect(res.statusCode).toBe(204); // No content
+    expect(res.statusCode).toBe(204); 
   });
 
   it("DELETE /api/tasks/:id → should handle non-existing task", async () => {

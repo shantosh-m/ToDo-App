@@ -1,5 +1,3 @@
-// taskHandlers.js
-
 // Fetch last 5 tasks
 export async function getTasks(pool, res) {
   try {
