@@ -9,7 +9,7 @@ export default function createTasksRouter(pool) {
       const [rows] = await pool.query(
         "SELECT * FROM task ORDER BY created_at DESC LIMIT 5"
       );
-      res.json(rows);
+      res.status(200).json(rows);
     } catch (err) {
       console.error(err);
       res.status(500).json({ error: "Failed to fetch tasks" });
