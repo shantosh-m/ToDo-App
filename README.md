@@ -1,10 +1,10 @@
 # ToDo Take-home Assessment
 
-## 🏗️ System Architecture
+## System Architecture
 
 ```mermaid
 graph LR
-A[React Frontend\nlocalhost:3000] <--> B[Node.js Backend\nlocalhost:4000]
+A[React Frontend \nlocalhost:3000] <--> B[Node.js Backend\nlocalhost:4000]
 B <--> C[PostgreSQL DB\nlocalhost:5432]
 ```
 
