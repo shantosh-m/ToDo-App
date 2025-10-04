@@ -1,5 +1,9 @@
 # ToDo Take-home Assessment
 
+## UI
+
+![App UI](./Overview.png)
+
 ## System Architecture
 
 ```mermaid
@@ -36,7 +40,7 @@ B <--> C[MySQL DB localhost:5432]
 
 - Backend unit/integration: `cd backend && npm test`
 - Frontend tests: `cd frontend && npm test`
-- Postman API testing done 
+- Postman API testing done
 
 ## Notes
 

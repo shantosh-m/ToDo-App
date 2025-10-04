@@ -24,6 +24,8 @@ services:
 
   frontend:
     build: ./frontend
+    container_name: todo_frontend
+    restart: always
     ports:
       - "3000:3000"
     depends_on:
